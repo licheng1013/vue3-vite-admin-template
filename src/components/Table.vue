@@ -2,7 +2,7 @@
     <div :class="'table '+animBounceInDown" >
       <el-card class="edit">
           <el-button type="primary" @click="emit('onAdd',model);">添加</el-button>
-          <el-button type="success"  @click="emit('onUpdate',multipleSel[0])" :disabled="multipleSel.length !== 1">修改</el-button>
+          <el-button type="success"  @click="emit('onUpdate',multipleSel[0]); " :disabled="multipleSel.length !== 1">修改</el-button>
           <el-button type="danger" @click="onDelete" :disabled="multipleSel.length < 1">删除</el-button>
       </el-card>
       <el-card>
