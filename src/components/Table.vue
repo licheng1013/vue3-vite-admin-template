@@ -1,23 +1,22 @@
 <template>
-    <div class="table" >
+    <div :class="'table '+animBounceInDown" >
       <el-card class="edit">
-        <el-button type="primary">添加</el-button>
-        <el-button type="success" :disabled="multipleSel.length !== 1">修改</el-button>
+          <el-button type="primary" @click="emit('onAdd',model)">添加</el-button>
+          <el-button type="success"  @click="emit('onUpdate',data[0])" :disabled="multipleSel.length !== 1">修改</el-button>
         <el-button type="danger" @click="onDelete" :disabled="multipleSel.length < 1">删除</el-button>
       </el-card>
       <el-card>
-        <el-table :data="data" style="width: 100%" @selection-change="onSelChange" height="calc(100vh - 340px)">
+        <el-table :data="data" style="width: 100%" @selection-change="onSelChange" height="calc(100vh - 310px)">
           <el-table-column type="selection" width="55"/>
           <el-table-column v-for="(item,key,index) in model" :label="item" :prop="key"/>
         </el-table>
       </el-card>
-      <Transition>
-
-      </Transition>
     </div>
 </template>
 
 <script setup>
+import {animBounceInDown} from "@/assets/anim";
+
 import {ref} from "vue";
 import {ElMessageBox} from "element-plus";
 
@@ -26,8 +25,8 @@ defineProps({model: {}, data: {type: Array},}) //设置后消除vue黄色警告�
 
 const multipleSel = ref([])
 const onSelChange = (val) => {multipleSel.value = val}
-// 统一删除方法
-const emit = defineEmits(['onDelete'])
+// 方法回调,删除-添加-修改,进行回调
+const emit = defineEmits(['onDelete','onAdd','onUpdate'])
 const onDelete = () => {
   ElMessageBox.confirm('是否删除所选元素！', '删除操作', {confirmButtonText: '确认', cancelButtonText: '取消', type: 'error'
     , center: true,}).then(()=>{
@@ -40,7 +39,6 @@ const onDelete = () => {
 <style scoped lang="scss">
 .table {
   height: 100%;
-
   .edit {
     display: flex;
     align-items: center;
@@ -48,4 +46,5 @@ const onDelete = () => {
     margin-bottom: 8px;
   }
 }
+
 </style>

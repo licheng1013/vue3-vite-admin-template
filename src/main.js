@@ -7,11 +7,17 @@ import router from './router'
 const app = createApp(App)
 // ----- 自定义css
 import './assets/index.css'
+// ----- 动画css
+import anim from 'animate.css';
+app.use(anim)
 
 // ----- ElementPlus
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-app.use(ElementPlus)
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+app.use(ElementPlus,{
+    locale: zhCn,
+})
 // icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

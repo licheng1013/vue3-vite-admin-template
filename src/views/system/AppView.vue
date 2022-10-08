@@ -27,19 +27,31 @@ let modelData = {
   createTime:"2022/10/7",
 }
 let data = ref([])
-for (let i = 0; i < 30; i++) {
-  let v = JSON.parse(JSON.stringify(modelData))
-  v.index = i;
-  data.value.push(v)
+
+// 查询-替换成服务器
+const onList = () => {
+  for (let i = 0; i < 30; i++) {
+    let v = JSON.parse(JSON.stringify(modelData))
+    v.index = i;
+    data.value.push(v)
+  }
 }
-//分页改变
+
+
+//分页改变-这里需要请求分页数据,默认会回调一次
 const onChange = (v) => {
   console.log(v)
+  onList()
 }
-// 修改
+// 修改-本地删除
 const onDelete = (v) => {
   for (let i in v) {
-    console.log(v[i])
+    for (let j = 0; j < data.value.length; j++) {
+      if (data.value[j].index === v[i].index) {
+        data.value.splice(j,1)
+        break
+      }
+    }
   }
 }
 </script>

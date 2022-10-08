@@ -2,29 +2,21 @@
   <el-container class="home" >
     <el-aside width="200px">
         <el-menu router active-text-color="yellow" text-color="white"  background-color="#292d3e"   default-active="/manager">
-          <el-menu-item index="/manager">
-            <el-icon><House /></el-icon>
-            <span>首页</span>
-          </el-menu-item>
-          <el-menu-item index="/app">
-            <el-icon><Coin /></el-icon>
-            <span>app</span>
-          </el-menu-item>
-          <el-menu-item index="/user">
-            <el-icon><User /></el-icon>
-            <span>用户</span>
-          </el-menu-item>
-          <el-menu-item index="/cdk">
-            <el-icon><Crop /></el-icon>
-            <span>激活码</span>
+          <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
+            <el-icon>
+              <component :is="v.icon"></component>
+            </el-icon>
+            <span>{{v.name}}</span>
           </el-menu-item>
         </el-menu>
     </el-aside>
 
     <el-container>
-      <el-header class="header">
-        <el-button type="primary" >导航栏</el-button>
-        <el-button type="primary" >退出</el-button>
+      <el-header class="header" height="100">
+        <el-card :class="animZoomIn">
+          <el-button type="primary" >导航栏</el-button>
+          <el-button type="primary" @click="onLogout">退出</el-button>
+        </el-card>
       </el-header>
       <el-main class="main">
           <RouterView/>
@@ -34,25 +26,45 @@
 </template>
 
 <script setup>
+// 动画
+import {animZoomIn,animBounceInDown} from "@/assets/anim"
 
+import router from "@/router";
+import {logout} from "@/stores/auth";
+// 根据数组来渲染路由
+let menus = []
+for (let route of router.options.routes) {
+  if (route.name === 'home') {
+      menus = route.children
+  }
+}
+console.log(menus)
+
+// 退出登入-这里可以做你的清理动作
+const onLogout = () => {
+   logout()
+   router.push({path:"/"})
+}
 </script>
 
 <style scoped lang="scss">
 .home{
   height: 100%;
-
   .el-aside,.el-menu{
     height: 100%;
     background-color: #292d3e;
   }
   .header{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    height: 100px;
+    margin-top: 8px;
+    .el-card{
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
   }
   .main{
+    padding-top: 8px;
     height: 100%;
   }
 }

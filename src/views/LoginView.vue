@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-form">
-      <el-card>
+      <el-card :class="animBounceIn">
         <h2>管理后台</h2>
         <el-form label-position="right" label-width="50px" :model="loginForm" size="large">
           <el-form-item label="账号">
@@ -19,15 +19,19 @@
 </template>
 
 <script setup>
+import {animBounceIn} from "@/assets/anim";
 import {reactive, ref} from "vue";
 import router from "@/router";
+import {login} from "@/stores/auth";
 
 let loginForm = reactive({
   username: "admin",
   password: "admin",
 })
 
+// 登入处理
 let onLogin = ()=>{
+  login("ok")
   router.push({path:"/home"})
 }
 

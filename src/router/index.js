@@ -4,6 +4,7 @@ import HomeView from "@/views/HomeView.vue";
 import ManagerView from "@/views/system/ManagerView.vue";
 import AppView from "@/views/system/AppView.vue";
 import DefaultView from "@/views/default/DefaultView.vue";
+import {isAuthenticated} from "@/stores/auth";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,27 +21,38 @@ const router = createRouter({
       children:[
         {
           path: '/manager',
-          name: 'manager',
+          name: '首页',
+          icon: 'House',
           component: ManagerView,
         },
         {
           path: '/app',
           name: 'app',
+          icon: 'Coin',
           component: AppView,
         },
         {
           path: '/user',
-          name: 'user',
+          name: '用户',
+          icon: 'User',
           component: DefaultView,
         },
         {
           path: '/cdk',
-          name: 'cdk',
+          name: '激活码',
+          icon: 'Crop',
           component: DefaultView,
         }
       ]
     },
   ]
+})
+
+
+// 已认证
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && !isAuthenticated()) next({ name: 'login' })
+  else next()
 })
 
 export default router
