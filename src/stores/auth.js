@@ -10,6 +10,14 @@ export function logout(){
 }
 //登入状态
 export function isAuthenticated(){
-    let item = window.localStorage.getItem(authenticated);
+    let item = getAuthenticated();
     return item !== null && item !== '' && item !== undefined
 }
+//获取
+function getAuthenticated() {
+    return  window.localStorage.getItem(authenticated);
+}
+
+//认证
+export const authMap = {}
+authMap[authenticated] = getAuthenticated()
