@@ -3,7 +3,7 @@
     <el-aside width="200px">
         <el-menu router active-text-color="yellow" text-color="white"  background-color="#292d3e"   :default-active="useStore().path">
           <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
-              <el-icon>
+              <el-icon >
                 <component :is="v.icon"></component>
               </el-icon>
               <span @click="onAnimBounce($event)">{{v.name}}</span>

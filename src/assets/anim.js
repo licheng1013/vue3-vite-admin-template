@@ -20,3 +20,12 @@ export const onAnimBounce = (v) => {
         element.classList.remove(classList[0],classList[1]);
     });
 }
+
+export const onAnimFadeInLeft = (v) => {
+    let classList = ["animate__animated","animate__fadeInLeft"]
+    let element = v.currentTarget
+    element.classList.add(classList[0],classList[1]);
+    element.addEventListener('animationend', () => {
+        element.classList.remove(classList[0],classList[1]);
+    });
+}
