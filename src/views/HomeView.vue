@@ -2,18 +2,20 @@
   <el-container class="home" >
     <el-aside width="200px">
         <el-menu router active-text-color="yellow" text-color="white"  background-color="#292d3e"   :default-active="useStore().path">
-          <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown" @click="onSelMenu">
-            <el-icon>
-              <component :is="v.icon"></component>
-            </el-icon>
-            <span>{{v.name}}</span>
+          <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
+            <div @click="onAnimBounce($event)" style="width: 100%">
+              <el-icon>
+                <component :is="v.icon"></component>
+              </el-icon>
+              <span >{{v.name}}</span>
+            </div>
           </el-menu-item>
         </el-menu>
     </el-aside>
     <el-container>
       <el-header class="header" height="100">
         <el-card :class="animBounceInDown">
-          <el-button type="primary" >导航栏</el-button>
+          <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
           <el-button type="primary" @click="onLogout">退出</el-button>
         </el-card>
       </el-header>
@@ -26,7 +28,7 @@
 
 <script setup>
 // 动画
-import {animBounceInDown} from "@/assets/anim"
+import {animBounceInDown, onAnimBounce} from "@/assets/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
@@ -50,6 +52,9 @@ const onLogout = () => {
    logout()
    router.push({path:"/"})
 }
+
+
+
 </script>
 
 <style scoped lang="scss">
