@@ -13,10 +13,10 @@
         </el-menu>
     </el-aside>
     <el-container>
-      <el-header class="header" height="100">
+      <el-header class="header" >
         <el-card :class="animBounceInDown">
-          <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
-          <el-button type="primary" @click="onLogout">退出</el-button>
+              <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
+              <el-button type="primary" @click="onLogout">退出</el-button>
         </el-card>
       </el-header>
       <el-main class="main">
@@ -66,7 +66,9 @@ const onLogout = () => {
   }
   .header{
     margin-top: 8px;
+    height: 100px;
     .el-card{
+      height: 100px;
       width: 100%;
       display: flex;
       justify-content: end;
