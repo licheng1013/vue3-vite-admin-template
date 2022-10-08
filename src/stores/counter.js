@@ -1,7 +1,9 @@
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-
-export const useStore = defineStore('store', () => {
-  const path = ref("")
-  return { path }
+import {ref} from "vue";
+// 保存页面载入
+export const useStore = defineStore('store',  () =>{
+  const path = ref("/manager")
+  return {path}
 })
+
+

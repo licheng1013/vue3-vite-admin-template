@@ -27,19 +27,19 @@ const router = createRouter({
         },
         {
           path: '/app',
-          name: 'app',
+          name: 'App管理',
           icon: 'Coin',
           component: AppView,
         },
         {
           path: '/user',
-          name: '用户',
+          name: '用户管理',
           icon: 'User',
           component: DefaultView,
         },
         {
-          path: '/cdk',
-          name: '激活码',
+          path: '/system',
+          name: '系统设置',
           icon: 'Crop',
           component: DefaultView,
         }

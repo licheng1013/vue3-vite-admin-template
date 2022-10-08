@@ -18,12 +18,12 @@
 <script setup>
 import {animBounceInUp} from "@/assets/anim";
 // 分页组件的实现
-import {reactive, ref} from 'vue'
+defineProps({total:Number})
+import {reactive} from 'vue'
 const page = reactive({
   page:1,
   size:10,
 })
-const total = ref(100)
 const emit = defineEmits(['onChange'])
 const onChange = () => {
   emit('onChange', page)

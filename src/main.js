@@ -8,8 +8,7 @@ const app = createApp(App)
 // ----- 自定义css
 import './assets/index.css'
 // ----- 动画css
-import anim from 'animate.css';
-app.use(anim)
+import  'animate.css';
 
 // ----- ElementPlus
 import ElementPlus from 'element-plus'

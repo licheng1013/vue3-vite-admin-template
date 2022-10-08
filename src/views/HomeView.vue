@@ -1,8 +1,8 @@
 <template>
   <el-container class="home" >
     <el-aside width="200px">
-        <el-menu router active-text-color="yellow" text-color="white"  background-color="#292d3e"   default-active="/manager">
-          <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
+        <el-menu router active-text-color="yellow" text-color="white"  background-color="#292d3e"   :default-active="useStore().path">
+          <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown" @click="onSelMenu">
             <el-icon>
               <component :is="v.icon"></component>
             </el-icon>
@@ -10,10 +10,9 @@
           </el-menu-item>
         </el-menu>
     </el-aside>
-
     <el-container>
       <el-header class="header" height="100">
-        <el-card :class="animZoomIn">
+        <el-card :class="animBounceInDown">
           <el-button type="primary" >导航栏</el-button>
           <el-button type="primary" @click="onLogout">退出</el-button>
         </el-card>
@@ -27,10 +26,12 @@
 
 <script setup>
 // 动画
-import {animZoomIn,animBounceInDown} from "@/assets/anim"
+import {animBounceInDown} from "@/assets/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
+import {useStore} from "@/stores/counter";
+
 // 根据数组来渲染路由
 let menus = []
 for (let route of router.options.routes) {
@@ -38,7 +39,11 @@ for (let route of router.options.routes) {
       menus = route.children
   }
 }
-console.log(menus)
+
+// 选择菜单
+const onSelMenu = (v) => {
+  useStore().path = v.index
+}
 
 // 退出登入-这里可以做你的清理动作
 const onLogout = () => {

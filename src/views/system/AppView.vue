@@ -1,14 +1,18 @@
 <template>
     <div class="app">
-      <Table class="table" :model="model" :data="data" @onDelete="onDelete"></Table>
-      <Pagination class="page" @onChange="onChange"></Pagination>
+      <Table class="table" :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate"></Table>
+      <Pagination class="page" @onChange="onChange" :total="50"></Pagination>
+      <!--  编辑功能    -->
+      <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
     </div>
 </template>
 
 <script setup>
 import Pagination from "@/components/Pagination.vue";
 import Table from "@/components/Table.vue";
-import {ref} from "vue";
+import { ref} from "vue";
+import Edit from "@/components/Edit.vue";
+// 动态表单
 const model = {
    index:"索引",
    name:"姓名",
@@ -17,7 +21,7 @@ const model = {
    status:"状态",
    createTime:"创建时间",
 }
-
+// 未来应该是数据数据，模拟数据
 let modelData = {
   index:0,
   name:"小蓝",
@@ -26,9 +30,10 @@ let modelData = {
   status:"关闭",
   createTime:"2022/10/7",
 }
-let data = ref([])
 
-// 查询-替换成服务器
+
+// 列表
+let data = ref([])
 const onList = () => {
   for (let i = 0; i < 30; i++) {
     let v = JSON.parse(JSON.stringify(modelData))
@@ -37,13 +42,12 @@ const onList = () => {
   }
 }
 
-
-//分页改变-这里需要请求分页数据,默认会回调一次
+//分页数据
 const onChange = (v) => {
   console.log(v)
   onList()
 }
-// 修改-本地删除
+// 删除
 const onDelete = (v) => {
   for (let i in v) {
     for (let j = 0; j < data.value.length; j++) {
@@ -54,6 +58,31 @@ const onDelete = (v) => {
     }
   }
 }
+
+// 编辑部分
+let title = ref("")
+let titles = ["添加","修改"]
+const editFlag = ref(false)
+const body = ref({})
+
+const onAdd = () => { // 添加
+  title.value = titles[0]
+  editFlag.value=true;
+  body.value={}
+}
+
+const onUpdate = (v) => { // 修改
+  title.value = titles[1]
+  editFlag.value = true
+  body.value = v;
+}
+
+const onCloseEdit = (v) => { // 关闭
+  // 回传的数据 - 这里需要根据  title 来进行修改或者添加操作
+  console.log(v)
+  editFlag.value = false
+}
+
 </script>
 
 <style scoped lang="scss">
