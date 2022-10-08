@@ -1,14 +1,15 @@
 # vue3-vite-admin-template
 
 ## 介绍
-- 一个非常简洁的后台模板
-
+- 一个非常简洁的后台模板,任何功能都可以自由组织
 
 ## 技术栈
 - Vue3
 - VueRouter
 - Pinia
 - Sass
+- element-plus
+- animate.css
 
 ## 开发
 ### 安装依赖
