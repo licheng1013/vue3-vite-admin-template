@@ -17,6 +17,7 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
+      meta:true,//布局->只有在1级数组才有效果
       component: HomeView,
       children:[
         {

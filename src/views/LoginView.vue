@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <Astronaut width="30%" height="30%" class="astronaut"></Astronaut>
     <div class="login-form">
       <el-card :class="animBounceIn">
         <h2>管理后台</h2>
@@ -23,6 +24,7 @@ import {animBounceIn} from "@/assets/anim";
 import {reactive, ref} from "vue";
 import router from "@/router";
 import {login} from "@/stores/auth";
+import Astronaut from "@/components/anim/Astronaut.vue";
 
 let loginForm = reactive({
   username: "admin",
@@ -32,7 +34,7 @@ let loginForm = reactive({
 // 登入处理
 let onLogin = ()=>{
   login("ok")
-  router.push({path:"/home"})
+  router.push({path:"/manager"})
 }
 
 </script>
@@ -63,6 +65,9 @@ let onLogin = ()=>{
       width: 100%;
     }
   }
+}
 
+.astronaut{
+  position: absolute;
 }
 </style>

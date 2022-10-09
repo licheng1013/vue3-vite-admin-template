@@ -11,6 +11,11 @@
 - element-plus
 - animate.css
 
+
+## 内部组件
+### Edit
+- 编辑组件,支持修改与回调
+
 ## 开发
 ### 安装依赖
 ```sh

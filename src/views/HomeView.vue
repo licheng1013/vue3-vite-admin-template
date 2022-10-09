@@ -35,8 +35,9 @@ import {useStore} from "@/stores/counter";
 // 根据数组来渲染路由
 let menus = []
 for (let route of router.options.routes) {
-  if (route.name === 'home') {
+  if (route.meta) {
       menus = route.children
+      break
   }
 }
 
