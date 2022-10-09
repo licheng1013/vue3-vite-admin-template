@@ -1,6 +1,6 @@
 <template>
   <div class="edit">
-    <el-dialog
+    <el-dialog :ref="dialog"
         v-model="editFlag"
         :title="title"
         width="30%"
@@ -22,10 +22,12 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
+const dialog = ref(null)
 let prop = defineProps({editFlag:Boolean,model:{},body:{},title:String});
 const emit = defineEmits([ 'onClose','onOk'])
 const onClose = () => {
-  emit('onClose')
+    emit('onClose')
 }
 const onOk = () => {
   emit('onOk',prop.body)

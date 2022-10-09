@@ -1,6 +1,6 @@
 <template>
   <el-container class="home" >
-    <el-aside width="200px">
+    <el-aside width="200px" :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white"  background-color="#292d3e"   :default-active="useStore().path">
           <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
               <el-icon >
@@ -26,7 +26,7 @@
 
 <script setup>
 // 动画
-import {animBounceInDown, onAnimBounce} from "@/assets/anim"
+import {animBounceInDown, onAnimBounce,animateBackInRight} from "@/assets/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
