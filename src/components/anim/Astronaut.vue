@@ -1,6 +1,6 @@
 <template>
-  <div :style="'height:'+height+';width:'+width" class="astronaut">
-    <el-image :src="url"></el-image>
+  <div :style="'height:'+height+';width:'+width" >
+    <el-image :src="url" ></el-image>
   </div>
 </template>
 

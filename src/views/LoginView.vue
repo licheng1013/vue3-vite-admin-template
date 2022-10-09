@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <Astronaut width="30%" height="30%" class="astronaut"></Astronaut>
+    <Astronaut width="300px" height="300px" class="astronaut"></Astronaut>
     <div class="login-form">
       <el-card :class="animBounceIn">
         <h2>管理后台</h2>
@@ -69,5 +69,7 @@ let onLogin = ()=>{
 
 .astronaut{
   position: absolute;
+  left: 70%;
+  top: 32.5%;
 }
 </style>
