@@ -1,7 +1,10 @@
 <template>
-    <el-card class="default" :class="animBounceInUp">
-      <el-image :src="url"  fit="cover" />
-    </el-card>
+      <div class="default" :class="animBounceInUp">
+        <el-card  >
+          <el-image :src="url"  fit="cover" />
+        </el-card>
+      </div>
+
 </template>
 
 <script setup>
@@ -14,7 +17,10 @@ const url = ref(`${imgUrl}`)
 <style scoped lang="scss">
 .default {
   height: 100%;
-  display: flex;
-  justify-content: center;
+  .el-card{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  };
 }
 </style>

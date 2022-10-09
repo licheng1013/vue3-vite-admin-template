@@ -1,7 +1,9 @@
 <template>
-    <el-card class="manager" :class="animBounceInUp">
+    <div class="manager" :class="animBounceInUp">
+      <el-card class="el-card">
         <el-image :src="url"  fit="cover" />
-    </el-card>
+      </el-card>
+    </div>
 </template>
 
 <script setup>
@@ -13,8 +15,13 @@ import {ref} from "vue";
 <style scoped lang="scss">
 .manager{
   height: 100%;
-  display: flex;
-  justify-content: center;
+  .el-card{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
+
+
 
 </style>
