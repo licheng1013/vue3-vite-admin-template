@@ -3,3 +3,9 @@ html,body,#app{
     margin: 0;
     padding: 0;
 }
+
+/*设置图片无法被选择*/
+.el-image{
+    pointer-events: none;
+    user-select: none;
+}
