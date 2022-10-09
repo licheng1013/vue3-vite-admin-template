@@ -36,12 +36,6 @@ const router = createRouter({
           name: '用户管理',
           icon: 'User',
           component: DefaultView,
-        },
-        {
-          path: '/system',
-          name: '系统设置',
-          icon: 'Crop',
-          component: DefaultView,
         }
       ]
     },

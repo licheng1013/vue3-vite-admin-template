@@ -1,5 +1,5 @@
 <template>
-    <div :class="'table '+animBounceInDown" >
+    <div class="table" :class="animBounceIn" >
       <el-card class="edit">
           <el-button type="primary" @click="emit('onAdd',model);">添加</el-button>
           <el-button type="success"  @click="emit('onUpdate',multipleSel[0]); " :disabled="multipleSel.length !== 1">修改</el-button>
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import {animBounceInDown} from "@/assets/anim";
+import {animBounceIn} from "@/assets/anim";
 
 import {ref} from "vue";
 import {ElMessageBox} from "element-plus";

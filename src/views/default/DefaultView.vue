@@ -1,18 +1,20 @@
 <template>
-  <div class="default">
-    <el-card class="default">
-      默认页面,待开发
+    <el-card class="default" :class="animBounceInUp">
+      <el-image :src="url"  fit="cover" />
     </el-card>
-  </div>
-
 </template>
 
 <script setup>
-
+import {animBounceInUp} from "@/assets/anim";
+import imgUrl from '@/assets/welcome.png'
+import {ref} from "vue";
+const url = ref(`${imgUrl}`)
 </script>
 
 <style scoped lang="scss">
 .default {
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>
