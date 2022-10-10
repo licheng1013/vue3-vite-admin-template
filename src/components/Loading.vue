@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-// 一个简单的loading组件
+// 一个简单的loading组件,您也可以把他当作全局loading来使用
 import {animBounce} from "@/assets/anim";
 import imgUrl from '@/assets/load.png'
 import {ref} from "vue";
