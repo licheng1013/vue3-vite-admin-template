@@ -9,3 +9,11 @@ html,body,#app{
     pointer-events: none;
     user-select: none;
 }
+
+/*插画全局样式*/
+.v-plate{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
