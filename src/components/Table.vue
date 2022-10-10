@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+// table组件
 import {animBounceIn} from "@/assets/anim";
 
 import {ref} from "vue";

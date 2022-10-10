@@ -16,8 +16,8 @@
 </template>
 
 <script setup>
-import {animBounceInUp} from "@/assets/anim";
 // 分页组件的实现
+import {animBounceInUp} from "@/assets/anim";
 defineProps({total:Number})
 import {reactive} from 'vue'
 const page = reactive({

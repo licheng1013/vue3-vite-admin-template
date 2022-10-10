@@ -11,6 +11,7 @@
 </template>
 
 <script setup>
+// 上传组件-未完善
 import {authMap} from "@/stores/auth";
 // 结果回调
 const onSuccess = (res,file,files) => {

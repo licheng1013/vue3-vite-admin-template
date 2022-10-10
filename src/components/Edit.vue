@@ -22,6 +22,7 @@
 </template>
 
 <script setup>
+// 编辑功能组件
 import {ref} from "vue";
 const dialog = ref(null)
 let prop = defineProps({editFlag:Boolean,model:{},body:{},title:String});
