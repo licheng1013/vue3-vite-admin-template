@@ -6,6 +6,7 @@ const defaultAnimClass = 'animate__animated'
 const animClass = defaultAnimClass+" "
 // 动画样式
 export const animZoomIn =  animClass+'animate__zoomIn'
+export const animBounce = animClass+'animate__bounce'
 export const animBounceIn = animClass+'animate__bounceIn'
 export const animBounceInUp = animClass+'animate__bounceInUp'
 export const animBounceInDown = animClass+'animate__bounceInDown'

@@ -42,7 +42,7 @@ const router = createRouter({
         {
           path: '/test',
           name: '组件示例',
-          icon: 'User',
+          icon: 'Help',
           component: TestView,
         }
       ]
