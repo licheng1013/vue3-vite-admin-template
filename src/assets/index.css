@@ -10,7 +10,7 @@ html,body,#app{
     user-select: none;
 }
 
-/*插画全局样式*/
+/*插画全局样式 ./css.js */
 .v-plate{
     height: 100%;
     display: flex;
