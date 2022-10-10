@@ -12,16 +12,14 @@
           </el-menu-item>
         </el-menu>
       </el-aside>
-      <el-container>
-        <el-header class="header">
-          <el-card :class="animBounceInDown">
+      <el-container style="display: flex;flex-direction: column">
+        <div  class="header">
+          <el-card :class="animBounceInDown" >
             <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
             <el-button type="primary" @click="onLogout">退出</el-button>
           </el-card>
-        </el-header>
-        <el-main class="main">
-          <RouterView/>
-        </el-main>
+        </div>
+        <RouterView class="main"/>
       </el-container>
     </el-container>
   </Layout>
@@ -70,13 +68,15 @@ const onLogout = () => {
     background-color: #292d3e;
   }
 
-  .header {
+  .header,.main{
     margin-top: 8px;
-    height: 100px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
 
+  .header {
     .el-card {
       height: 100px;
-      width: 100%;
       display: flex;
       justify-content: end;
       align-items: center;
@@ -84,7 +84,6 @@ const onLogout = () => {
   }
 
   .main {
-    padding-top: 8px;
     height: 100%;
   }
 }

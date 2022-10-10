@@ -5,12 +5,12 @@
           <el-button type="success"  @click="emit('onUpdate',multipleSel[0]); " :disabled="multipleSel.length !== 1">修改</el-button>
           <el-button type="danger" @click="onDelete" :disabled="multipleSel.length < 1">删除</el-button>
       </el-card>
-      <el-card>
-        <el-table :data="data" style="width: 100%" @selection-change="onSelChange" height="calc(100vh - 330px)">
-          <el-table-column type="selection" width="55"/>
-          <!--  item=模型的值,key模型的key        -->
-          <el-table-column v-for="(item,key,index) in model" :label="item" :prop="key"/>
-        </el-table>
+      <el-card class="body">
+<!--        <el-table :data="data" style="width: 100%" @selection-change="onSelChange" >-->
+<!--          <el-table-column type="selection" width="55"/>-->
+<!--          &lt;!&ndash;  item=模型的值,key模型的key        &ndash;&gt;-->
+<!--          <el-table-column v-for="(item,key,index) in model" :label="item" :prop="key"/>-->
+<!--        </el-table>-->
       </el-card>
     </div>
 </template>
@@ -46,6 +46,9 @@ const onDelete = () => {
     align-items: center;
     height: 55px;
     margin-bottom: 8px;
+  }
+  .body{
+    height: 100%;
   }
 }
 </style>

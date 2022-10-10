@@ -13,6 +13,7 @@
 
 <style scoped lang="scss">
 .layout{
-  height: 100%;
+  height: 85%;
+  width: 70%;
 }
 </style>

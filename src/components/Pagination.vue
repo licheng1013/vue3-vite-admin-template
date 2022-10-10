@@ -8,9 +8,7 @@
           :page-sizes="[10, 20, 30, 50]"
           background
           :layout="'total, sizes, prev, pager, next, jumper'"
-          :total="400"
-          @size-change="onChange"
-          @current-change="onChange"/>
+          :total="400" @size-change="onChange" @current-change="onChange"/>
     </el-card>
   </div>
 </template>

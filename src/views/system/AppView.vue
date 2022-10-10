@@ -1,7 +1,7 @@
 <template>
     <div class="app">
-      <Table class="table" :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate"></Table>
-      <Pagination class="page" @onChange="onChange" :total="50"></Pagination>
+      <Table :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate"></Table>
+      <Pagination  @onChange="onChange" :total="50"></Pagination>
       <!--  编辑功能    -->
       <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
     </div>
@@ -90,8 +90,6 @@ const onCloseEdit = (v) => { // 关闭
   height: 100%;
   display: flex;
   flex-direction: column;
-  .table{
-    flex-grow: 1;
-  }
+
 }
 </style>
