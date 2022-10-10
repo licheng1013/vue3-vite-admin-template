@@ -5,6 +5,7 @@ import ManagerView from "@/views/system/ManagerView.vue";
 import AppView from "@/views/system/AppView.vue";
 import DefaultView from "@/views/default/DefaultView.vue";
 import TestView from "@/views/default/TestView.vue";
+import HelpView from "@/views/default/HelpView.vue";
 import {isAuthenticated} from "@/stores/auth";
 
 const router = createRouter({
@@ -42,8 +43,14 @@ const router = createRouter({
         {
           path: '/test',
           name: '组件示例',
-          icon: 'Help',
+          icon: 'Watermelon',
           component: TestView,
+        },
+        {
+          path: '/help',
+          name: '项目帮助',
+          icon: 'Help',
+          component: HelpView,
         }
       ]
     },
