@@ -32,10 +32,13 @@ onChange()
 
 <style scoped lang="scss">
 .page{
+  height: 75px;
   display: flex;
   align-items: center;
-  height: 75px;
   .el-card{
+    display: flex;
+    align-items: center;
+    height: 50px;
     width: 100%;
   }
 }

@@ -1,5 +1,4 @@
 <template>
-  <Layout>
     <el-container class="home" >
       <el-aside width="200px" :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
@@ -22,7 +21,6 @@
         <RouterView class="main"/>
       </el-container>
     </el-container>
-  </Layout>
 
 
 </template>
@@ -68,24 +66,26 @@ const onLogout = () => {
     background-color: #292d3e;
   }
 
+  // 设置内边距
   .header,.main{
     margin-top: 8px;
     margin-left: 8px;
     margin-right: 8px;
   }
+  // 这里必须要设置，否则会出现滚动条
+  .main{
+    margin-bottom: 16px;
+  }
 
   .header {
     .el-card {
-      height: 100px;
+      height: 75px;
       display: flex;
       justify-content: end;
       align-items: center;
     }
   }
 
-  .main {
-    height: 100%;
-  }
 }
 
 </style>
