@@ -2,7 +2,7 @@
     <el-container class="home" >
       <el-aside  :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
-                 :default-active="useStore().path">
+                 :default-active="useStore().path"  @select="useStore().setSelIndex">
           <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
             <el-icon>
               <component :is="v.icon"></component>
@@ -43,10 +43,6 @@ for (let route of router.options.routes) {
   }
 }
 
-// 选择菜单
-const onSelMenu = (v) => {
-  useStore().path = v.index
-}
 
 // 退出登入-这里可以做你的清理动作
 const onLogout = () => {

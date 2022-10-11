@@ -1,6 +1,6 @@
 <template>
   <div v-if="loadingFlag" class="loading">
-      <el-image  :src="url" style="width: 50%;height:50%">
+      <el-image  :src="url" style="width: 20%;height:45%">
       </el-image>
   </div>
 </template>

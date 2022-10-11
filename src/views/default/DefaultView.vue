@@ -16,6 +16,7 @@ const url = ref(`${imgUrl}`)
 
 <style scoped lang="scss">
 .default {
+  overflow: hidden;
   height: 100%;
 }
 </style>
