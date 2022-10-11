@@ -4,7 +4,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "Astronaut",
+};
+</script>
+
 <script setup>
+
 import imgUrl from '@/assets/astronaut.gif'
 import {ref} from "vue";
 

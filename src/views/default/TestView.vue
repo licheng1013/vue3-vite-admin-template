@@ -1,8 +1,10 @@
 <template>
-  <div class="default" :class="animBounceInUp">
+  <div class="default" :class="animBounceInUp" >
     <Loading :loading-flag="loadingFlag"/>
+    <CodeTool :enabled="codeFlag" @onOff="codeFlag=false"></CodeTool>
     <div class="body">
         <el-button @click="onLoading">加载动画</el-button>
+        <el-button @click="codeFlag = true">代码工具</el-button>
     </div>
     <el-card  :class="plate">
         <el-image :src="url"  fit="cover" />
@@ -16,6 +18,10 @@ import {animBounceInUp} from "@/assets/anim";
 import imgUrl from '@/assets/success.png'
 import {ref} from "vue";
 import Loading from "@/components/Loading.vue";
+import CodeTool from "@/components/CodeTool.vue";
+
+
+const codeFlag = ref(false)
 
 const onLoading = () => {
   loadingFlag.value = true
@@ -35,7 +41,8 @@ const loadingFlag = ref(false)
     height: 100%;
     width: 100%;
     .el-button{
-       margin: 32px;
+       margin-top: 32px;
+       margin-left: 32px;
     }
   }
 }
