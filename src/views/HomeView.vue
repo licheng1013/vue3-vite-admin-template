@@ -2,7 +2,7 @@
     <el-container class="home" >
       <el-aside  :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
-                 :default-active="useStore().path"  @select="useStore().setSelIndex">
+                 :default-active="store.path"  @select="store.setSelIndex">
           <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
             <el-icon>
               <component :is="v.icon"></component>
@@ -32,7 +32,7 @@ import {animBounceInDown, onAnimBounce, animateBackInRight} from "@/assets/anim"
 import router from "@/router";
 import {logout} from "@/stores/auth";
 import {useStore} from "@/stores/counter";
-import Layout from "@/components/Layout.vue";
+const store =  useStore()
 
 // 根据数组来渲染路由
 let menus = []
@@ -42,7 +42,6 @@ for (let route of router.options.routes) {
     break
   }
 }
-
 
 // 退出登入-这里可以做你的清理动作
 const onLogout = () => {
@@ -79,6 +78,7 @@ const onLogout = () => {
 
   .header {
     .el-card {
+      width: 100%;
       height: 75px;
       display: flex;
       justify-content: end;

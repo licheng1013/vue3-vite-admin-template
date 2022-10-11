@@ -5,6 +5,7 @@
 const defaultAnimClass = 'animate__animated'
 const animClass = defaultAnimClass+" "
 export const bounceInDownList = [defaultAnimClass,"animate__bounceInDown"]
+export const bounceOutDownList = [defaultAnimClass,"animate__bounceOutDown"]
 
 // 动画样式
 export const animZoomIn =  animClass+'animate__zoomIn'
@@ -50,7 +51,7 @@ export const onAnimBounceInDown = (v,f)=>{
 
 // 根据css标签来渲染动画
 export const onCssAnim = (css,list,f)=>{
-    const element = document.querySelector(css);
+    let element = document.querySelector(css)
     element.classList.add(list[0], list[1]);
     element.addEventListener('animationend', () => {
         element.classList.remove(list[0],list[1]);
