@@ -5,9 +5,7 @@
         <el-button @click="onLoading">加载动画</el-button>
     </div>
     <el-card  :class="plate">
-      <div>
         <el-image :src="url"  fit="cover" />
-      </div>
     </el-card>
   </div>
 </template>

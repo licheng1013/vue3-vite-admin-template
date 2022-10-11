@@ -1,9 +1,7 @@
 <template>
     <div class="manager" :class="animBounceInUp">
       <el-card class="el-card" :class="plate">
-        <div>
             <el-image :src="url"  fit="cover" />
-        </div>
       </el-card>
     </div>
 </template>

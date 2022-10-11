@@ -6,7 +6,7 @@ import router from './router'
 
 const app = createApp(App)
 // ----- 自定义css
-import './assets/index.css'
+import './assets/index.scss'
 // ----- 动画css
 import  'animate.css';
 
