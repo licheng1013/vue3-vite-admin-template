@@ -1,9 +1,7 @@
 <template>
   <div v-if="loadingFlag" class="loading">
-    <div>
-      <el-image  :src="url" style="width: 300px;height:300px">
+      <el-image  :src="url" style="width: 50%;height:50%">
       </el-image>
-    </div>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <el-container class="home" >
-      <el-aside width="200px" :class="animateBackInRight">
+      <el-aside  :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
                  :default-active="useStore().path">
           <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
@@ -60,6 +60,10 @@ const onLogout = () => {
 <style scoped lang="scss">
 .home {
   height: 100%;
+
+  .el-aside{
+    width: 150px;
+  }
 
   .el-aside,.el-menu {
     height: 100%;
