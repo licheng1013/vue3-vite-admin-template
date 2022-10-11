@@ -5,13 +5,14 @@
 const defaultAnimClass = 'animate__animated'
 const animClass = defaultAnimClass+" "
 export const bounceInDownList = [defaultAnimClass,"animate__bounceInDown"]
+export const bounceInUpList = [defaultAnimClass,"animate__bounceInUp"]
 export const bounceOutDownList = [defaultAnimClass,"animate__bounceOutDown"]
 
 // 动画样式
 export const animZoomIn =  animClass+'animate__zoomIn'
 export const animBounce = animClass+'animate__bounce'
 export const animBounceIn = animClass+'animate__bounceIn'
-export const animBounceInUp = animClass+'animate__bounceInUp'
+export const animBounceInUp = animClass+bounceInUpList[1]
 export const animBounceInDown = animClass+bounceInDownList[1]
 export const animateBackInRight = animClass+'animate__backInRight'
 

@@ -1,17 +1,29 @@
 <template>
-  <div class="anim">
-    <el-card  class="code" v-if="enabled"  :class="animBounceInDown">
-      <el-button @click="onQuit">退出</el-button>
-    </el-card>
-  </div>
+    <div class="code" v-if="enabled"  :class="animBounceInUp">
+      <div class="header">
+          <el-button  type="primary" @click="onQuit">退出</el-button>
+      </div>
+
+      <div class="body">
+          <el-card>
+            <el-input
+                v-model="textarea"
+                :autosize="{minRows: 26, maxRows: 26}"
+                type="textarea"
+                placeholder="Please input"
+            />
+          </el-card>
+      </div>
+    </div>
 </template>
 
 <script  setup>
-import {animBounceInDown} from "@/assets/anim";
+// 暂时未完成
+import {animBounceInUp} from "@/assets/anim";
+import {ref} from "vue";
 defineProps({enabled: Boolean});
-// 这里目前只能做一个开关从父组件关闭，子组件关闭有时候总会点击无效果
 let emits = defineEmits(["onOff"]);
-
+const textarea = ref("")
 const onQuit = () => {
      emits("onOff")
 }
@@ -23,5 +35,28 @@ const onQuit = () => {
   position: fixed;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  .header{
+    height: 10%;
+    *{
+      margin-left: 32px;
+      margin-top: 32px;
+    }
+  }
+  .body{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .el-card{
+      width: 60%;
+      height: 70%;
+    }
+  }
+
 }
 </style>

@@ -5,6 +5,7 @@
     <div class="body">
         <el-button @click="onLoading">加载动画</el-button>
         <el-button @click="codeFlag = true">代码工具</el-button>
+        <Upload class="el-button">上传组件</Upload>
     </div>
     <el-card  :class="plate">
         <el-image :src="url"  fit="cover" />
@@ -19,6 +20,7 @@ import imgUrl from '@/assets/success.png'
 import {ref} from "vue";
 import Loading from "@/components/Loading.vue";
 import CodeTool from "@/components/CodeTool.vue";
+import Upload from "@/components/Upload.vue";
 
 
 const codeFlag = ref(false)
