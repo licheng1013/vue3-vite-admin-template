@@ -14,6 +14,7 @@
       <el-container style="display: flex;flex-direction: column">
         <div  class="header">
           <el-card :class="animBounceInDown" >
+            <VueVersion></VueVersion>
             <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
             <el-button type="primary" @click="onLogout">退出</el-button>
           </el-card>
@@ -32,6 +33,7 @@ import {animBounceInDown, onAnimBounce, animateBackInRight} from "@/assets/anim"
 import router from "@/router";
 import {logout} from "@/stores/auth";
 import {useStore} from "@/stores/counter";
+import VueVersion from "@/components/version/VueVersion.vue";
 const store =  useStore()
 
 // 根据数组来渲染路由
