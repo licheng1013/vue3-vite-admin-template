@@ -19,6 +19,11 @@ export const useStore = defineStore('store', () => {
 })
 
 
+// 面包屑
+export const navBarStore = defineStore('navBar',()=>{
+    const menus = ref([]);
+    return {menus}
+})
 
 
 

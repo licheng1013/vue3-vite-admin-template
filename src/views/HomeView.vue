@@ -13,11 +13,12 @@
       </el-aside>
       <el-container style="display: flex;flex-direction: column">
         <div  class="header">
-          <el-card :class="animBounceInDown" >
-            <VueVersion></VueVersion>
+          <div class="el-card" :class="animBounceInDown">
+            <Navigation ></Navigation>
             <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
+            <VueVersion ></VueVersion >
             <el-button type="primary" @click="onLogout">退出</el-button>
-          </el-card>
+          </div>
         </div>
         <RouterView class="main"/>
       </el-container>
@@ -32,16 +33,20 @@ import {animBounceInDown, onAnimBounce, animateBackInRight} from "@/assets/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
-import {useStore} from "@/stores/counter";
+import {useStore,navBarStore} from "@/stores/counter";
 import VueVersion from "@/components/version/VueVersion.vue";
+import Navigation from "@/components/Navigation.vue";
 const store =  useStore()
+const navBar =  navBarStore()
 
 // 根据数组来渲染路由
 let menus = []
 for (let route of router.options.routes) {
   if (route.meta) {
-    menus = route.children
-    break
+      // 路由和菜单
+      menus = route.children
+      navBar.menus = menus
+      break
   }
 }
 
@@ -85,6 +90,9 @@ const onLogout = () => {
       display: flex;
       justify-content: end;
       align-items: center;
+      *{
+        margin-right: 16px;
+      }
     }
   }
 

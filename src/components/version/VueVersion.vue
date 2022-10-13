@@ -1,5 +1,5 @@
 <template>
-  <el-link :underline="false" class="el-button" href="https://cn.vuejs.org/" target="_blank">
+  <el-link :underline="false" href="https://cn.vuejs.org/" target="_blank">
       <el-button type="primary" icon="Share">Vue {{vueVersion}}</el-button>
   </el-link>
 </template>
