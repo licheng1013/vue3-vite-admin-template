@@ -3,7 +3,7 @@
       <el-aside  :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
                  :default-active="store.path"  @select="store.setSelIndex">
-          <el-menu-item v-for="(v,index) in menus" :index="v.path" :class="animBounceInDown">
+          <el-menu-item v-for="(v,index) in store.menus" :index="v.path" :class="animBounceInDown">
             <el-icon>
               <component :is="v.icon"></component>
             </el-icon>
@@ -15,7 +15,6 @@
         <div  class="header">
           <div class="el-card" :class="animBounceInDown">
             <Navigation ></Navigation>
-            <el-button type="primary" @click="onAnimBounce($event)">导航栏</el-button>
             <VueVersion ></VueVersion >
             <el-button type="primary" @click="onLogout">退出</el-button>
           </div>
@@ -33,22 +32,12 @@ import {animBounceInDown, onAnimBounce, animateBackInRight} from "@/assets/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
-import {useStore,navBarStore} from "@/stores/counter";
+import {useStore} from "@/stores/counter";
 import VueVersion from "@/components/version/VueVersion.vue";
 import Navigation from "@/components/Navigation.vue";
 const store =  useStore()
-const navBar =  navBarStore()
 
-// 根据数组来渲染路由
-let menus = []
-for (let route of router.options.routes) {
-  if (route.meta) {
-      // 路由和菜单
-      menus = route.children
-      navBar.menus = menus
-      break
-  }
-}
+
 
 // 退出登入-这里可以做你的清理动作
 const onLogout = () => {

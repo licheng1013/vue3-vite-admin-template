@@ -1,17 +1,55 @@
 <template>
-      <div class="navBar" >
-          <el-tag class="mx-1" size="large" closable v-for="i in 5">路由:{{i}}</el-tag>
-      </div>
+  <div class="navBar">
+    <div v-for="(i,index) in navBar.menus">
+      <el-button-group>
+        <el-button class="routerBtn" size="large" @click="onChange(i.path,$event)"
+                   :class="use.path !== i.path || 'btnColor' "
+                   :type="use.path === i.path ? 'primary':'info'">{{i.name }}
+        </el-button>
+        <el-button class="delBtn"   size="large"  type="danger" icon="Delete" circle />
+      </el-button-group>
+    </div>
+  </div>
 </template>
 
 <script setup>
+import {navBarStore, useStore} from "@/stores/counter";
+import router from "@/router";
+import {onAnimBounce} from "@/assets/anim";
 
+const use = useStore()
+const navBar = navBarStore()
+
+
+const onChange = (v, e) => {
+  onAnimBounce(e)
+  use.path = v;
+  router.push({path: v})
+}
 </script>
 
 <style scoped lang="scss">
-.navBar{
-  .el-tag{
-    margin-left: 8px;
+.navBar {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+
+
+  .btnColor{
+    color: yellow;
+  }
+
+  .delBtn{
+    height: 35px;
+    width: 5px;
+  }
+
+  .routerBtn {
+    height: 35px;
+    width: 75px;
+    margin-left: 16px;
   }
 }
 
