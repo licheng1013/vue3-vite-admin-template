@@ -22,6 +22,9 @@ export const useStore = defineStore('store', () => {
         }
     }
 
+
+    const refresh = ref(new Date().getTime());
+
     // 对于页面刷新，而菜单路由也改变的操作
     let item = window.sessionStorage.getItem(indexKey);
     if (item === null) {
@@ -42,7 +45,7 @@ export const useStore = defineStore('store', () => {
             }
         })
     }
-    return {path, setSelIndex,menus}
+    return {path, setSelIndex,menus,refresh}
 })
 
 

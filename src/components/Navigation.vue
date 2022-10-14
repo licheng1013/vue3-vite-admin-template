@@ -20,10 +20,10 @@ import {onAnimBounce} from "@/assets/anim";
 const use = useStore()
 const navBar = navBarStore()
 
-
 const onChange = (v, e) => {
   onAnimBounce(e)
   use.path = v;
+  use.refresh = new Date().getTime()
   router.push({path: v})
 }
 </script>

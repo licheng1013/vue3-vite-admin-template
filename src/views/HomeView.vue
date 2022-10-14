@@ -19,7 +19,7 @@
             <el-button type="primary" @click="onLogout">退出</el-button>
           </div>
         </div>
-        <RouterView class="main"/>
+        <RouterView class="main" :key="store.refresh"/>
       </el-container>
     </el-container>
 
@@ -27,6 +27,7 @@
 </template>
 
 <script setup>
+
 // 动画
 import {animBounceInDown, onAnimBounce, animateBackInRight} from "@/assets/anim"
 
