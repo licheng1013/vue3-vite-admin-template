@@ -6,7 +6,7 @@
                    :class="use.path !== i.path || 'btnColor' "
                    :type="use.path === i.path ? 'primary':'info'">{{i.name }}
         </el-button>
-        <el-button class="delBtn"   size="large"  type="danger" icon="Delete" circle />
+        <el-button class="delBtn"   size="large"  type="danger" icon="Delete" circle @click="onDelete(index)" />
       </el-button-group>
     </div>
   </div>
@@ -26,6 +26,11 @@ const onChange = (v, e) => {
   use.refresh = new Date().getTime()
   router.push({path: v})
 }
+
+const onDelete = (v) => {
+  console.log(v)
+}
+
 </script>
 
 <style scoped lang="scss">
