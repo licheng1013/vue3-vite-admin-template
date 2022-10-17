@@ -24,11 +24,17 @@ const onChange = (v, e) => {
   onAnimBounce(e)
   use.path = v;
   use.refresh = new Date().getTime()
-  router.push({path: v})
+  router.push({path: use.path})
 }
 
 const onDelete = (v) => {
-  console.log(v)
+
+  use.remove(v)
+  if (v > 0) {
+     use.path = navBar.menus[v-1].path
+     use.refresh = new Date().getTime()
+     router.push({path: use.path})
+  }
 }
 
 </script>

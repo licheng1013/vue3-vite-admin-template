@@ -45,7 +45,12 @@ export const useStore = defineStore('store', () => {
             }
         })
     }
-    return {path, setSelIndex,menus,refresh}
+
+    const remove = (v) => {
+        navBar.remove(v)
+    }
+
+    return {path, setSelIndex,menus,refresh,remove}
 })
 
 
@@ -67,7 +72,13 @@ export const navBarStore = defineStore('navBar',()=>{
         menus.value.push(v)
         window.sessionStorage.setItem(navBarKey,JSON.stringify(menus.value));
     }
-    return {menus,addPath}
+
+    //删除
+    const remove = (v) => {
+        delete menus.value.splice(v,1)
+        window.sessionStorage.setItem(navBarKey,JSON.stringify(menus.value));
+    }
+    return {menus,addPath,remove}
 })
 
 
