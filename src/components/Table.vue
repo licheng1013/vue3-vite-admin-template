@@ -1,5 +1,5 @@
 <template>
-  <div class="table" :class="animBounceIn" >
+  <div class="table" :class="animBounceIn">
     <div>
       <el-card class="edit">
         <el-button type="primary" @click="emit('onAdd',model);">添加</el-button>
@@ -12,7 +12,14 @@
         <el-table :data="data" style="width: 100%" @selection-change="onSelChange" :height="height-100">
           <el-table-column type="selection" width="55"/>
           <!--  item=模型的值,key模型的key        -->
-          <el-table-column v-for="(item,key,index) in model" :label="item" :prop="key"/>
+          <el-table-column v-for="(item,key,index) in model" :label="item" :prop="key">
+            <template #default="scope">
+              <!-- 动态插槽名 -->
+              <slot :name="key" :scope="scope">
+                {{ scope.row[key] }}
+              </slot>
+            </template>
+          </el-table-column>
         </el-table>
       </el-card>
     </div>
@@ -32,7 +39,7 @@ defineProps({model: {}, data: {type: Array},}) //设置后消除vue黄色警告�
 
 const height = ref(0)
 
-onMounted(()=>{
+onMounted(() => {
   let selector = document.querySelector(".table");
   height.value = selector.clientHeight
 })

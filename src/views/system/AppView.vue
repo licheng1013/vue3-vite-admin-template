@@ -1,6 +1,13 @@
 <template>
     <div class="app">
-      <Table :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate"></Table>
+      <Table :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate" >
+          <template  #sex="scope">
+            {{scope.scope.row.sex === 1 ? "男的":"女的"}}
+          </template>
+          <template  #status="scope">
+            {{scope.scope.row.status === 1 ? "正常":"关闭"}}
+          </template>
+      </Table>
       <Pagination  @onChange="onChange" :total="total"></Pagination>
       <!--  编辑功能    -->
       <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
@@ -25,9 +32,9 @@ const model = {
 let modelData = {
   index:0,
   name:"小蓝",
-  sex:"男",
+  sex:2,
   addr:"北京市",
-  status:"关闭",
+  status:1,
   createTime:"2022/10/7",
 }
 
