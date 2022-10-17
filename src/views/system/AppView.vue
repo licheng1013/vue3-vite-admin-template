@@ -1,7 +1,7 @@
 <template>
     <div class="app">
       <Table :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate"></Table>
-      <Pagination  @onChange="onChange" :total="50"></Pagination>
+      <Pagination  @onChange="onChange" :total="total"></Pagination>
       <!--  编辑功能    -->
       <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
     </div>
@@ -21,7 +21,7 @@ const model = {
    status:"状态",
    createTime:"创建时间",
 }
-// 未来应该是数据数据，模拟数据
+// 模拟数据
 let modelData = {
   index:0,
   name:"小蓝",
@@ -31,9 +31,9 @@ let modelData = {
   createTime:"2022/10/7",
 }
 
-
-// 列表
+// 列表 和 总数
 let data = ref([])
+let total = ref(50)
 const onList = () => {
   for (let i = 0; i < 30; i++) {
     let v = JSON.parse(JSON.stringify(modelData))

@@ -15,6 +15,11 @@
         <div  class="header">
           <div class="el-card" :class="animBounceInDown">
             <Navigation ></Navigation>
+
+
+            <el-link :underline="false" href="https://gitee.com/licheng1013/vue3-vite-admin-template" target="_blank" style="margin-right: 4px">
+              <el-button type="primary" icon="Share">项目地址</el-button>
+            </el-link>
             <VueVersion ></VueVersion >
             <el-button type="primary" @click="onLogout">退出</el-button>
           </div>
