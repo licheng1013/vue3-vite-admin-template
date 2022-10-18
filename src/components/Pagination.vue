@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <el-card :class="animBounceInUp">
+    <el-card>
       <el-pagination
           v-model:currentPage="page.page"
           v-model:page-size="page.size"
@@ -15,7 +15,6 @@
 
 <script setup>
 // 分页组件的实现
-import {animBounceInUp} from "@/assets/anim";
 defineProps({total:Number})
 import {reactive} from 'vue'
 const page = reactive({

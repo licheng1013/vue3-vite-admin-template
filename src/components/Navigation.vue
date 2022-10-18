@@ -1,15 +1,18 @@
 <template>
   <div class="navBar">
-    <div v-for="(i,index) in navBar.menus">
-      <el-button-group>
-        <el-button class="routerBtn" size="large" @click="onChange(i.path,$event)"
+    <div v-for="(i,index) in navBar.menus" style="display: flex">
+      <div>
+        <span class="routerBtn" size="small" @click="onChange(i.path,$event)"
                    :class="use.path !== i.path || 'btnColor' "
                    :type="use.path === i.path ? 'primary':'info'">{{i.name }}
-        </el-button>
-        <el-button class="delBtn"   size="large"  type="danger" icon="Delete" circle @click="onDelete(index)" />
-      </el-button-group>
+        </span>
+      </div>
+      <div style="padding-top: 2px">
+        <el-icon  @click="onDelete(index)"><Close /></el-icon>
+      </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
@@ -41,27 +44,22 @@ const onDelete = (v) => {
 
 <style scoped lang="scss">
 .navBar {
-  align-items: center;
-  height: 100%;
+  height: 35px;
   display: flex;
   overflow: hidden;
-  width: 100%;
-
+  align-items: center;
+  font-size: 16px;
 
   .btnColor{
-    color: yellow;
-  }
-
-  .delBtn{
-    height: 35px;
-    width: 5px;
+    color: coral;
   }
 
   .routerBtn {
-    height: 35px;
-    width: 75px;
-    margin-left: 16px;
+    width: 50px;
+    margin-left: 8px;
   }
+
+
 }
 
 </style>

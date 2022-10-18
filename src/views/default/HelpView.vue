@@ -1,14 +1,16 @@
 <template>
-  <div class="help" :class="animBounceInUp">
+  <AnimBounceInUp class="help">
     <el-card :class="plate" >
-        Help
+      Help
     </el-card>
-  </div>
+
+  </AnimBounceInUp>
+
 </template>
 
 <script setup>
 import {plate} from "@/assets/css";
-import {animBounceInUp} from "@/assets/anim";
+import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
 </script>
 
 <style scoped lang="scss">

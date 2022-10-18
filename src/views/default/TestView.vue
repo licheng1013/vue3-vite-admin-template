@@ -1,19 +1,23 @@
 <template>
-  <div class="default" :class="animBounceInUp" >
+  <AnimBounceInUp class="default">
+
     <Loading :loading-flag="loadingFlag"/>
     <CodeTool :enabled="codeFlag" @onOff="codeFlag=false"></CodeTool>
     <div class="body">
-        <el-button @click="onLoading">加载动画</el-button>
-        <el-button @click="codeFlag = true">代码工具</el-button>
-        <Upload class="el-button">上传组件</Upload>
+      <el-button @click="onLoading">加载动画</el-button>
+      <el-button @click="codeFlag = true">代码工具</el-button>
+      <Upload class="el-button">上传组件</Upload>
     </div>
     <el-card  :class="plate">
-        <el-image :src="url"  fit="cover" />
+      <el-image :src="url"  fit="cover" />
     </el-card>
-  </div>
+
+  </AnimBounceInUp>
+
 </template>
 
 <script setup>
+import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
 import {plate} from "@/assets/css";
 import {animBounceInUp} from "@/assets/anim";
 import imgUrl from '@/assets/success.png'

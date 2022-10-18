@@ -3,7 +3,7 @@
       <el-aside  :class="animateBackInRight">
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
                  :default-active="store.path"  @select="store.setSelIndex">
-          <el-menu-item v-for="(v,index) in store.menus" :index="v.path" :class="animBounceInDown">
+          <el-menu-item v-for="(v,index) in store.menus" :index="v.path"  :class="animBounceInDown">
             <el-icon>
               <component :is="v.icon"></component>
             </el-icon>
@@ -14,9 +14,6 @@
       <el-container style="display: flex;flex-direction: column">
         <div  class="header">
           <div class="el-card" :class="animBounceInDown">
-            <Navigation ></Navigation>
-
-
             <el-link :underline="false" href="https://gitee.com/licheng1013/vue3-vite-admin-template" target="_blank" style="margin-right: 4px">
               <el-button type="primary" icon="Share">项目地址</el-button>
             </el-link>
@@ -24,6 +21,10 @@
             <el-button type="primary" @click="onLogout">退出</el-button>
           </div>
         </div>
+        <div >
+          <Navigation class="el-card navBar" ></Navigation >
+        </div>
+
         <RouterView class="main" :key="store.refresh"/>
       </el-container>
     </el-container>
@@ -68,10 +69,10 @@ const onLogout = () => {
   }
 
   // 设置内边距
-  .header,.main{
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
+  .header,.main,.navBar{
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   // 这里必须要设置，否则会出现滚动条
   .main{
@@ -81,7 +82,7 @@ const onLogout = () => {
   .header {
     .el-card {
       width: 100%;
-      height: 75px;
+      height: 50px;
       display: flex;
       justify-content: end;
       align-items: center;

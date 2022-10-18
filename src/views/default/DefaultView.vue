@@ -1,16 +1,16 @@
 <template>
-      <div class="default" :class="animBounceInUp">
-        <el-card :class="plate" >
-              <el-image :src="url"  fit="cover" />
-        </el-card>
-      </div>
+  <AnimBounceInUp  class="default">
+    <el-card :class="plate" >
+      <el-image :src="url"  fit="cover" />
+    </el-card>
+  </AnimBounceInUp>
 </template>
 
 <script setup>
 import {plate} from "@/assets/css";
-import {animBounceInUp} from "@/assets/anim";
 import imgUrl from '@/assets/welcome.png'
 import {ref} from "vue";
+import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
 const url = ref(`${imgUrl}`)
 </script>
 

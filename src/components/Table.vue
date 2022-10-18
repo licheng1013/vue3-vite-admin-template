@@ -1,5 +1,5 @@
 <template>
-  <div class="table" :class="animBounceIn">
+  <div class="table">
     <div>
       <el-card class="edit">
         <el-button type="primary" @click="emit('onAdd',model);">添加</el-button>
@@ -28,8 +28,6 @@
 </template>
 
 <script setup>
-// table组件
-import {animBounceIn} from "@/assets/anim";
 
 import {onMounted, ref} from "vue";
 import {ElMessageBox} from "element-plus";
@@ -70,7 +68,7 @@ const onDelete = () => {
     display: flex;
     align-items: center;
     height: 55px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
 }

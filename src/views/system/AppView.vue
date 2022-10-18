@@ -1,17 +1,18 @@
 <template>
-    <div class="app">
+  <AnimBounceInUp class="app">
       <Table :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate" >
-          <template  #sex="scope">
-            {{scope.scope.row.sex === 1 ? "男的":"女的"}}
-          </template>
-          <template  #status="scope">
-            {{scope.scope.row.status === 1 ? "正常":"关闭"}}
-          </template>
+        <template  #sex="scope">
+          {{scope.scope.row.sex === 1 ? "男的":"女的"}}
+        </template>
+        <template  #status="scope">
+          {{scope.scope.row.status === 1 ? "正常":"关闭"}}
+        </template>
       </Table>
       <Pagination  @onChange="onChange" :total="total"></Pagination>
       <!--  编辑功能    -->
       <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
-    </div>
+  </AnimBounceInUp>
+
 </template>
 
 <script setup>
@@ -19,6 +20,7 @@ import Pagination from "@/components/Pagination.vue";
 import Table from "@/components/Table.vue";
 import { ref} from "vue";
 import Edit from "@/components/Edit.vue";
+import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
 // 动态表单
 const model = {
    index:"索引",
