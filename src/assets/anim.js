@@ -6,11 +6,8 @@ const defaultAnimClass = 'animate__animated'
 const animClass = defaultAnimClass+" "
 export const bounceInDownList = [defaultAnimClass,"animate__bounceInDown"]
 export const bounceInUpList = [defaultAnimClass,"animate__bounceInUp"]
-export const bounceOutDownList = [defaultAnimClass,"animate__bounceOutDown"]
 
 // 动画样式
-export const animZoomIn =  animClass+'animate__zoomIn'
-export const animBounce = animClass+'animate__bounce'
 export const animBounceIn = animClass+'animate__bounceIn'
 export const animBounceInUp = animClass+bounceInUpList[1]
 export const animBounceInDown = animClass+bounceInDownList[1]
@@ -23,10 +20,7 @@ export const onAnimBounce = (v) => {
     let classList = [defaultAnimClass,"animate__bounce"]
     onAnim(v,classList)
 }
-export const onAnimFadeInLeft = (v) => {
-    let classList = [defaultAnimClass,"animate__fadeInLeft"]
-    onAnim(v,classList)
-}
+
 const onAnim = (v,list)=>{
     onAnimMethod(v,list,()=>{})
 }
@@ -40,15 +34,6 @@ const onAnimMethod = (v,list,method)=>{
     });
 }
 
-// 退出下降动画,f回调方法
-export const onAnimBackOutDown = (v,f) => {
-    let classList = [defaultAnimClass,"animate__backOutDown"]
-    onAnimMethod(v,classList,f)
-}
-export const onAnimBounceInDown = (v,f)=>{
-    let classList = [defaultAnimClass,"animate__bounceInDown"]
-    onAnimMethod(v,classList,f)
-}
 
 // 根据css标签来渲染动画
 export const onCssAnim = (css,list,f)=>{
