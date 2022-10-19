@@ -11,7 +11,8 @@ export const bounceInUpList = [defaultAnimClass,"animate__bounceInUp"]
 export const animBounceIn = animClass+'animate__bounceIn'
 export const animBounceInUp = animClass+bounceInUpList[1]
 export const animBounceInDown = animClass+bounceInDownList[1]
-export const animateBackInRight = animClass+'animate__backInRight'
+export const animBackInRight = animClass+'animate__backInRight'
+export const animaZoomIn = animClass+'animate__zoomIn'
 
 
 // 弹跳动画,参数必须是: $event , 用法 onAnimBounce($event)
