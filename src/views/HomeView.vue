@@ -4,9 +4,7 @@
         <el-menu router active-text-color="yellow" text-color="white" background-color="#292d3e"
                  :default-active="store.path"  @select="store.setSelIndex">
           <el-menu-item v-for="(v,index) in store.menus" :index="v.path"  :class="animBounceInDown">
-            <el-icon>
-              <component :is="v.icon"></component>
-            </el-icon>
+            <el-icon><component :is="v.icon"></component></el-icon>
             <span>{{ v.name }}</span>
           </el-menu-item>
         </el-menu>
