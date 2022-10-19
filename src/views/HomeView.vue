@@ -22,7 +22,9 @@
           </div>
         </div>
         <div >
-          <Navigation class="el-card navBar" ></Navigation >
+          <AnimBounceInUp>
+            <Navigation class="el-card navBar" ></Navigation >
+          </AnimBounceInUp>
         </div>
 
         <RouterView class="main" :key="store.refresh"/>
@@ -42,6 +44,7 @@ import {logout} from "@/stores/auth";
 import {useStore} from "@/stores/counter";
 import VueVersion from "@/components/version/VueVersion.vue";
 import Navigation from "@/components/Navigation.vue";
+import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
 const store =  useStore()
 
 
