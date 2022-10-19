@@ -1,14 +1,13 @@
 <template>
   <div class="navBar">
-    <div v-for="(i,index) in navBar.menus" style="display: flex">
-      <div>
-        <span class="routerBtn" size="small" @click="onChange(i.path,$event)"
-              :class="use.path !== i.path || 'btnColor' "
-              :type="use.path === i.path ? 'primary':'info'">{{ i.name }}
+    <el-icon style="margin-left: 16px;margin-bottom: 2px" color="red" class="no-sel" @click="onOffAll"><DeleteFilled /></el-icon>
+    <div v-for="(i,index) in navBar.menus" style="display: flex" :class="use.path === i.path ? 'sel' :'no-sel' ">
+      <div @click="onChange(i.path)">
+        <span class="routerBtn">{{ i.name }}
         </span>
       </div>
-      <div style="padding-top: 2px">
-        <el-icon @click="onDelete(index,i.path)">
+      <div style="padding-top: 2px " @click="onDelete(index,i.path)">
+        <el-icon>
           <Close/>
         </el-icon>
       </div>
@@ -25,8 +24,11 @@ import {onAnimBounce} from "@/assets/anim";
 const use = useStore()
 const navBar = navBarStore()
 
-const onChange = (v, e) => {
-  onAnimBounce(e)
+const onOffAll = () => {
+  navBar.removeAll()
+}
+
+const onChange = (v) => {
   use.path = v;
   use.refresh = new Date().getTime()
   router.push({path: use.path})
@@ -61,8 +63,12 @@ const onDelete = (v, path) => {
   align-items: center;
   font-size: 16px;
 
-  .btnColor {
+  .sel {
     color: coral;
+  }
+
+  .sel, .no-sel {
+    cursor: pointer;
   }
 
   .routerBtn {

@@ -78,7 +78,12 @@ export const navBarStore = defineStore('navBar',()=>{
         delete menus.value.splice(v,1)
         window.sessionStorage.setItem(navBarKey,JSON.stringify(menus.value));
     }
-    return {menus,addPath,remove}
+    const removeAll = () => {
+        menus.value = []
+        window.sessionStorage.setItem(navBarKey,JSON.stringify(menus.value));
+    }
+
+    return {menus,addPath,remove,removeAll}
 })
 
 

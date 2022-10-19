@@ -7,7 +7,7 @@
             <el-icon>
               <component :is="v.icon"></component>
             </el-icon>
-            <span @click="onAnimBounce($event)">{{ v.name }}</span>
+            <span>{{ v.name }}</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -35,7 +35,7 @@
 <script setup>
 
 // 动画
-import {animBounceInDown, onAnimBounce, animateBackInRight} from "@/assets/anim"
+import {animBounceInDown, animateBackInRight} from "@/assets/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
