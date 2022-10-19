@@ -3,12 +3,14 @@
     <div v-for="(i,index) in navBar.menus" style="display: flex">
       <div>
         <span class="routerBtn" size="small" @click="onChange(i.path,$event)"
-                   :class="use.path !== i.path || 'btnColor' "
-                   :type="use.path === i.path ? 'primary':'info'">{{i.name }}
+              :class="use.path !== i.path || 'btnColor' "
+              :type="use.path === i.path ? 'primary':'info'">{{ i.name }}
         </span>
       </div>
       <div style="padding-top: 2px">
-        <el-icon  @click="onDelete(index)"><Close /></el-icon>
+        <el-icon @click="onDelete(index,i.path)">
+          <Close/>
+        </el-icon>
       </div>
     </div>
   </div>
@@ -30,14 +32,23 @@ const onChange = (v, e) => {
   router.push({path: use.path})
 }
 
-const onDelete = (v) => {
-
+const onDelete = (v, path) => {
   use.remove(v)
-  if (v > 0) {
-     use.path = navBar.menus[v-1].path
-     use.refresh = new Date().getTime()
-     router.push({path: use.path})
+  // 判断不是当前选择中的
+  if (path !== use.path) {
+    return
   }
+  // 索引大于0就往前移
+  if (v > 0) {
+    use.path = navBar.menus[v - 1].path
+  } else { //否则往后移动
+    if (navBar.menus.length !== 0) {
+      use.path = navBar.menus[0].path
+      console.log(use.path)
+    }
+  }
+  router.push({path: use.path})
+  use.refresh = new Date().getTime()
 }
 
 </script>
@@ -50,7 +61,7 @@ const onDelete = (v) => {
   align-items: center;
   font-size: 16px;
 
-  .btnColor{
+  .btnColor {
     color: coral;
   }
 
