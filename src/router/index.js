@@ -1,11 +1,12 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import {createMemoryHistory, createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
 import LoginView from "@/views/LoginView.vue";
 import {isAuthenticated} from "@/stores/auth";
 import {defineAsyncComponent} from "vue";
 
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    // history: createWebHistory(import.meta.env.BASE_URL), //不带#
+    history: createWebHashHistory(import.meta.env.BASE_URL), //带#
     routes: [
         {
             path: '/',

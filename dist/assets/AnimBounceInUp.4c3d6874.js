@@ -1,1 +1,0 @@
-import{o as s,g as n,q as a,n as o,u as r,s as t}from"./index.5aaa0dc1.js";const p={__name:"AnimBounceInUp",setup(c){return(e,l)=>(s(),n("div",{class:o(r(t))},[a(e.$slots,"default")],2))}};export{p as _};
