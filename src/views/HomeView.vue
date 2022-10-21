@@ -27,8 +27,6 @@
         <RouterView class="main" :key="store.refresh"/>
       </el-container>
     </el-container>
-
-
 </template>
 
 <script setup>
@@ -42,6 +40,7 @@ import {useStore} from "@/stores/counter";
 import VueVersion from "@/components/version/VueVersion.vue";
 import Navigation from "@/components/Navigation.vue";
 import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
+import Layout from "@/components/dev/Layout.vue";
 const store =  useStore()
 
 

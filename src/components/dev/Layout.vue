@@ -2,7 +2,9 @@
   <!-- 插槽功能 -->
   <div class="layout">
     <!-- 用于接受父组件的参数  -->
-    <slot></slot>
+    <div class="body">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -12,8 +14,16 @@
 </script>
 
 <style scoped lang="scss">
-.layout{
-  height: 85%;
-  width: 70%;
+.layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .body {
+    height: 95%;
+    width: 95%;
+  }
 }
 </style>
