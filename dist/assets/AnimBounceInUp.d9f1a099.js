@@ -1,0 +1,1 @@
+import{o as n,g as s,p as a,n as o,u as r,q as t}from"./index.f8801af9.js";const m={__name:"AnimBounceInUp",setup(c){return(e,l)=>(n(),s("div",{class:o(r(t))},[a(e.$slots,"default")],2))}};export{m as _};

@@ -1,0 +1,1 @@
+import{_ as t}from"./AnimBounceInUp.d9f1a099.js";import{_ as a,b as c,o,c as s,w as e,e as l,f as p}from"./index.f8801af9.js";const n={__name:"HelpView",setup(r){return(d,f)=>{const _=c("el-card");return o(),s(t,{class:"help"},{default:e(()=>[l(_,null,{default:e(()=>[p(" Help ")]),_:1})]),_:1})}}},u=a(n,[["__scopeId","data-v-d93cd101"]]);export{u as default};
