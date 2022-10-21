@@ -8,23 +8,20 @@
       <el-button @click="codeFlag = true">代码工具</el-button>
       <Upload class="el-button">上传组件</Upload>
     </div>
-    <el-card  :class="plate">
+    <el-card >
       <el-image :src="url"  fit="cover" />
     </el-card>
-
   </AnimBounceInUp>
 
 </template>
 
 <script setup>
 import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
-import {plate} from "@/assets/css";
-import {animBounceInUp} from "@/assets/anim";
 import imgUrl from '@/assets/success.png'
 import {ref} from "vue";
-import Loading from "@/components/Loading.vue";
-import CodeTool from "@/components/CodeTool.vue";
-import Upload from "@/components/Upload.vue";
+import Loading from "@/components/dev/Loading.vue";
+import CodeTool from "@/components/dev/CodeTool.vue";
+import Upload from "@/components/dev/Upload.vue";
 
 
 const codeFlag = ref(false)
@@ -49,6 +46,17 @@ const loadingFlag = ref(false)
     .el-button{
        margin-top: 32px;
        margin-left: 32px;
+    }
+  }
+  .el-card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .el-image{
+      width: 100%;
+      height: 100%;
     }
   }
 }

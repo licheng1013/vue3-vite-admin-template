@@ -5,21 +5,9 @@ html,body,#app{
     padding: 0;
 }
 
-/*设置图片无法被选择, 可以直接移除*/
+/*设置图片无法被选择,可以直接移除,*/
 .el-image{
     pointer-events: none;
     user-select: none;
 }
 
-/*插画全局样式 可以从 ./css.js 里面修改查看对应变量被那些组件使用了，可以直接移除 */
-.v-plate{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .el-image{
-        width: 100%;
-        height: 100%;
-    }
-}
