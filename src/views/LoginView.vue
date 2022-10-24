@@ -1,19 +1,18 @@
 <template>
   <div class="login">
-    <div class="login-form">
-      <el-card :class="animBounceIn">
-        <h2>管理后台</h2>
-        <el-form label-position="right" label-width="50px" :model="loginForm" size="large">
-          <el-form-item label="账号">
-            <el-input v-model="loginForm.username"/>
-          </el-form-item>
-          <el-form-item label="密码">
-            <el-input v-model="loginForm.password"/>
-          </el-form-item>
-          <el-button type="primary" size="large" @click="onLogin">登入</el-button>
-        </el-form>
-      </el-card>
-    </div>
+
+    <el-card :class="animBounceIn">
+      <h2 style="margin-bottom: 42px">管理后台</h2>
+      <el-form label-position="right" label-width="50px" :model="loginForm" size="large">
+        <el-form-item label="账号">
+          <el-input v-model="loginForm.username"/>
+        </el-form-item>
+        <el-form-item label="密码">
+          <el-input v-model="loginForm.password"/>
+        </el-form-item>
+        <el-button type="primary" size="large" @click="onLogin">登入</el-button>
+      </el-form>
+    </el-card>
 
   </div>
 </template>
@@ -30,9 +29,9 @@ let loginForm = reactive({
 })
 
 // 登入处理
-let onLogin = ()=>{
+let onLogin = () => {
   login("ok")
-  router.push({path:"/manager"})
+  router.push({path: "/manager"})
 }
 
 </script>
@@ -43,31 +42,24 @@ let onLogin = ()=>{
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center; // 从上至下居中
+  justify-content: center; // 左至右居中
 
-  // 登入样式
-  .login-form {
-    margin-top: 275px;
-    .el-card{
-      text-align: center;
-      width: 350px;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+  .el-card {
+    text-align: center;
+    width: 35%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    .el-button{
+    .el-button {
       width: 100%;
     }
   }
+
 }
 
-.astronaut{
-  position: absolute;
-  left: 70%;
-  top: 32.5%;
-}
+
 </style>

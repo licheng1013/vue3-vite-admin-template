@@ -1,5 +1,5 @@
 <template>
-    <div :class="animBounceInUp">
+    <div :class="animBounceInUp" class="anim">
         <slot></slot>
     </div>
 </template>
@@ -10,5 +10,7 @@ import {animBounceInUp} from "@/assets/anim";
 </script>
 
 <style scoped lang="scss">
-
+.anim{
+  height: 100%;
+}
 </style>
