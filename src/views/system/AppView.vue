@@ -1,5 +1,6 @@
 <template>
-  <AnimBounceInUp class="app">
+  <AnimBounceInUp >
+    <div class="app">
       <Table :model="model" :data="data" @onDelete="onDelete" @onAdd="onAdd" @onUpdate="onUpdate" >
         <template  #sex="scope">
           {{scope.scope.row.sex === 1 ? "男的":"女的"}}
@@ -11,6 +12,8 @@
       <Pagination  @onChange="onChange" :total="total"></Pagination>
       <!--  编辑功能    -->
       <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
+    </div>
+
   </AnimBounceInUp>
 
 </template>
@@ -99,6 +102,5 @@ const onCloseEdit = (v) => { // 关闭
   height: 100%;
   display: flex;
   flex-direction: column;
-
 }
 </style>

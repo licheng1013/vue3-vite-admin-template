@@ -1,0 +1,1 @@
+import{_ as n,o as s,g as a,p as o,n as _,u as t,q as c}from"./index.8ed6e493.js";const p={__name:"AnimBounceInUp",setup(r){return(e,u)=>(s(),a("div",{class:_([t(c),"anim"])},[o(e.$slots,"default",{},void 0,!0)],2))}},d=n(p,[["__scopeId","data-v-dff3f669"]]);export{d as A};

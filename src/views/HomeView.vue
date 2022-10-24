@@ -87,7 +87,7 @@ const onLogout = () => {
   // 这里必须要设置，否则会出现滚动条
   .main {
     margin-bottom: 4px;
-    background-color: wheat;
+    //background-color: wheat;
     height: 100%;
   }
 

@@ -47,8 +47,8 @@ let onLogin = () => {
 
   .el-card {
     text-align: center;
-    width: 35%;
-    height: 40%;
+    width: 325px;
+    height: 325px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,0 +1,1 @@
+import{A as e}from"./AnimBounceInUp.ca901682.js";import{o as t,c as a,w as o,f as c}from"./index.8ed6e493.js";const p={__name:"DefaultView",setup(r){return(s,n)=>(t(),a(e,{class:"default"},{default:o(()=>[c(" \u9ED8\u8BA4\u9875\u9762 ")]),_:1}))}};export{p as default};
