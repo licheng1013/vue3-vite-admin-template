@@ -8,8 +8,8 @@
         <el-button type="danger" @click="onDelete" :disabled="multipleSel.length < 1">删除</el-button>
       </el-card>
 
-      <el-card class="body" ref="body">
-        <el-table :data="data" style="width: 100%" @selection-change="onSelChange" :height="height-100">
+      <el-card>
+        <el-table :data="data" style="width: 100%" @selection-change="onSelChange" :height="height-110">
           <el-table-column type="selection" width="55"/>
           <!--  item=模型的值,key模型的key        -->
           <el-table-column v-for="(item,key,index) in model" :label="item" :prop="key">

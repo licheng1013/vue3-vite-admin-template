@@ -19,9 +19,11 @@
 
 <script setup>
 import {animBounceIn} from "@/assets/anim";
-import {reactive, ref} from "vue";
+import {reactive} from "vue";
 import router from "@/router";
 import {login} from "@/stores/auth";
+import {useStore} from "@/stores/counter";
+const store = useStore()
 
 let loginForm = reactive({
   username: "admin",
@@ -31,7 +33,7 @@ let loginForm = reactive({
 // 登入处理
 let onLogin = () => {
   login("ok")
-  router.push({path: "/manager"})
+  router.push({path: store.path})
 }
 
 </script>

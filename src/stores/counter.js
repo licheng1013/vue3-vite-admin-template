@@ -11,7 +11,6 @@ const navBarKey = "navBarKey"
 // 保存页面载入
 export const useStore = defineStore('store', () => {
 
-
     // 根据数组来渲染路由
     let menus = []
     for (let route of router.options.routes) {
@@ -21,7 +20,6 @@ export const useStore = defineStore('store', () => {
             break
         }
     }
-
 
     const refresh = ref(new Date().getTime());
 

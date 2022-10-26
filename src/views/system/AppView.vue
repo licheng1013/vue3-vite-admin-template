@@ -13,7 +13,6 @@
       <!--  编辑功能    -->
       <Edit :title="title" :edit-flag="editFlag" :model="model" :body="body"  @onOk="onCloseEdit" @onClose="editFlag = false" ></Edit>
     </div>
-
   </AnimBounceInUp>
 
 </template>
