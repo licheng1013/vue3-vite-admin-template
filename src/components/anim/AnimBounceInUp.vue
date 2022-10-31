@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import {animBounceInUp} from "@/assets/anim";
+import {animBounceInUp} from "@/components/anim/anim";
 
 </script>
 

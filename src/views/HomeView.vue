@@ -37,7 +37,7 @@
 <script setup>
 
 // 动画
-import {animBounceInDown, animBackInRight} from "@/assets/anim"
+import {animBounceInDown, animBackInRight} from "@/components/anim/anim"
 
 import router from "@/router";
 import {logout} from "@/stores/auth";
@@ -45,7 +45,6 @@ import {useStore} from "@/stores/counter";
 import VueVersion from "@/components/version/VueVersion.vue";
 import Navigation from "@/components/Navigation.vue";
 import AnimBounceInUp from "@/components/anim/AnimBounceInUp.vue";
-import Layout from "@/components/dev/Layout.vue";
 
 const store = useStore()
 

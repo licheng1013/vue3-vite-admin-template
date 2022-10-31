@@ -19,7 +19,7 @@
 
 <script  setup>
 // 暂时未完成
-import {animBounceInUp} from "@/assets/anim";
+import {animBounceInUp} from "@/components/anim/anim";
 import {ref} from "vue";
 defineProps({enabled: Boolean});
 let emits = defineEmits(["onOff"]);

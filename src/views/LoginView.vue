@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import {animBounceIn} from "@/assets/anim";
+import {animBounceIn} from "@/components/anim/anim";
 import {reactive} from "vue";
 import router from "@/router";
 import {login} from "@/stores/auth";

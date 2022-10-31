@@ -19,7 +19,7 @@
 <script setup>
 import {navBarStore, useStore} from "@/stores/counter";
 import router from "@/router";
-import {onAnimBounce} from "@/assets/anim";
+import {onAnimBounce} from "@/components/anim/anim";
 
 const use = useStore()
 const navBar = navBarStore()
